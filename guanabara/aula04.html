@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Digite dois numeros para serem somados</h1>
+    <input type="text" id="n1">
+    <input type="text" id="n2">
+    <input type="button" value="Soma +" onclick="soma()">
+    <input type="button" value="divisao /" onclick="divisao()">
+    <input type="button" value="subtracao - +" onclick="subtracao()">
+    <input type="button" value="multiplicacao *" onclick="multiplicacao()">
+    <div id="res">
+
+    </div>
+
+    <h1>Digite dois numeros para serem somados</h1>
+    <input type="text" id="metro" onkeyup="mcm()" placeholder="Metros para centimetros">
+    <input type="text" id="metro2" onkeyup="cmm()" placeholder="centimetros para metros">
+    <div id="res2">
+
+    </div>
+    <div id="res3">
+        </div>
+    <script>
+        function multiplicacao() {
+            var n1 = window.document.getElementById('n1')
+            var n2 = window.document.getElementById('n2')
+            var res = window.document.querySelector('div#res')
+
+            var resultado = Number.parseInt(n1.value) * Number.parseInt(n2.value)
+            res.innerHTML = `<p> A soma é ${resultado} </p>`
+        } 
+        function subtracao() {
+            var n1 = window.document.getElementById('n1')
+            var n2 = window.document.getElementById('n2')
+            var res = window.document.querySelector('div#res')
+
+            var resultado = Number.parseInt(n1.value) - Number.parseInt(n2.value)
+            res.innerHTML = `<p> A soma é ${resultado} </p>`
+        }
+
+        function divisao() {
+            var n1 = window.document.getElementById('n1')
+            var n2 = window.document.getElementById('n2')
+            var res = window.document.querySelector('div#res')
+
+            var resultado = Number.parseInt(n1.value) / Number.parseInt(n2.value)
+            res.innerHTML = `<p> A soma é ${resultado} </p>`
+        }
+        
+        function soma() {
+            var n1 = window.document.getElementById('n1')
+            var n2 = window.document.getElementById('n2')
+            var res = window.document.querySelector('div#res')
+
+            var resultado = Number.parseInt(n1.value) + Number.parseInt(n2.value)
+            res.innerHTML = `<p> A soma é ${resultado} </p>`
+        }
+
+        function cmm() {
+            var m = window.document.getElementById('metro2')
+            var resultado = Number.parseFloat(m.value) / 100
+            var res2= window.document.querySelector('div#res3')
+            res3.innerHTML= `<p> ${resultado} metros </p>`
+        }
+
+        function mcm() {
+            var m = window.document.getElementById('metro')
+            var resultado = Number.parseFloat(m.value) * 100
+            var res2= window.document.querySelector('div#res2')
+            res2.innerHTML= `<p> ${resultado} centimetros </p>`
+        }
+            
+    </script>
+</body>
+</html>
+<!-- ## AVISOS
+
+- JS Web
+- Entenda como criar elementos dentro do body (uma div, uma ul e li dentro da ul)
+- Entenda como obter elementos para atualizar valores e atributos
+    - querySelector, getElementById
+- Entenda como capturar eventos, exemplo, onClick
+
+## Desafios iniciais
+- Refazer o js04-soma-dos-numeros via web
+    - criar 2 inputs (n1 e n2)
+    - criar um botão somar
+    - criar um h2 com id='resultado'
+    - criar a function somar(n1, n2)
+    - fazer um addListenner capturando o onclick do botão para chamar a funcao soma
+- Refazer o js02-metros-para-centimetros
+    - fazer o visual de conversao do google
+    - capturar o evento onchange ou onkey alguma coisa de forma que conforme
+    digitamos em metros, o campo centímetros é atualizado "em tempo real"
+    - Fazer uma interface web para o problema do Erick, lista 02 / js09
+    - estudar alguma biblioteca JS para facilitar operações com data (new Date)
+    - ver alguma biblioteca que exiba um componente visual de calendario (igual o google calendar)
+    
+## Desafio FINAL desta semana
+- Fazer o Wordle completo
+    - pegar o CSS que fizemos na parte 1
+
+
+    // function nacionalidade() {
+    //     var txt = window.document.getElementById('oioi')
+    //     var res = window.document.querySelector('div#res')
+    //     var nacionalidade = (txt.value)
+    //     nacionalidade = nacionalidade.toUpperCase()
+    //     if (nacionalidade == 'BRASIL') {
+    //         res.innerHTML = `<p> vc é do brasil ${nacionalidade} </p>`  
+    //     }
+    //     else {
+    //         res.innerHTML = `<p> voce nao é do brasil vc é do ${nacionalidade} </p>`
+    //     }
+    //     }
+    - adicionar as funcionalidades com JS -->

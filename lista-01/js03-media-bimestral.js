@@ -19,23 +19,31 @@
  *  - Veja como é feito para mostrar sempre 1 casa decimal
  *  - O que aconteceria se não tivesse o .toFixed com a entrada [7, 5, 5.5, 6, 5.1]
  * 
- *  - EXTRA:
+ *  - EXTRA: 
  *    Como fazer para Mostrar APROVADO/REPROVADO no final (p/nota de corte = 7)
  */
 
 // Entrada
-var notas = [10, 8, 9.5, 7, 10]
-
+var notas = [ 8, 8, 8 ]
+var i = 0
 // Altere a expressão abaixo para calcular cm com base na var metros
 var media, quantidadeDeNotas
 var total = 0
 
 // Faça um loop para achar o total de notas
-
+for (i in notas) {
+    total+= notas[i]
+}
 // Veja como pegar este valor com base na entrada
-quantidadeDeNotas = 5
-media = 0    // ?
+quantidadeDeNotas = notas.length
+media = total / quantidadeDeNotas    // ?
 
 var resultado = '👉 a média das ' + quantidadeDeNotas + ' notas do bimestre é ' + media.toFixed(1)
-
 console.log(resultado)
+
+let aprovado = 'reprovado'
+if (media >= 7) {
+    aprovado = 'aprovado'
+} 
+
+console.log(aprovado)

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8' />
+    <link href='./node_modules/fullcalendar/main.css' rel='stylesheet' />
+    <script src='./node_modules/fullcalendar/main.js'></script>
+    <script src="./lista-02/js09.js"></script>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const meusDiasDeFolga = getDiasFolga(1)
+            const meusDiasDeFolgaParseados = meusDiasDeFolga.map(function parseador(meuDia, index) {
+                const meuDiaParseado = parseDate(meuDia)
+                return {
+                        title: `Folga ${index + 1}`, // a property!
+                        start: meuDiaParseado, // a property!
+                        end: meuDiaParseado // a property! ** see important note below about 'end' **
+                }
+            })
+            console.log(meusDiasDeFolgaParseados)
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                events: meusDiasDeFolgaParseados
+            });
+            calendar.render();
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id='calendar'></div>
+</body>
+
+</html>
